@@ -1,0 +1,128 @@
+<!-- ↓同じレイアウトを別ページでも使用する場合は前回作成したindex.HTMLをコピーして不要な
+箇所を削除した法がミスが少ない。
+今回は<head>内はタブのタイトルのみ変更していて、ファビコンやスタイルシートはは同じものを読み込んでいる。
+    <body>内はロゴとNAVを同じ仕様にしている。 -->
+
+<!DOCTYPE html>
+<!-- DOCTYPE=ドックタイプ -->
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <!-- charset=キャーセット -->
+    <title>WCB CAFE -CONTACT</title>
+    <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
+    <!-- meta name="description"は1つのタグとして覚える。 -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- ↑自身で作成するスタイルシートの<link rel="stylesheet" href="">の上にリセットCSSのリンクを記載する -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- ↑WEB上のタブにあるアイコン＝ファビコン
+    追加方法はlink rel="icon"を1つのタグとし、
+    type="image/png"でどこのフォルダに入ってる何形式のファイルか指定し、
+    href="images/favicon.png"で実際のファイル名を指定。
+    ※必ずHTMLの<head></head>の要素の中に追加すること！ -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- ↑レスポンシブ対応させる際にこのままコピペで使う -->
+    <meta propety="og:url" content="http://example.com/index.html">
+    <meta propety="og:type" content="website">
+    <meta propety="og:title" content="WCB CAFE HOME">
+    <meta propety="og:description" content="おしゃれなカフェで癒されてみませんか？無添加の食材で体の中からリフレッシュ。">
+    <meta propety="og:image" content="htto://example.com/images/ogp.jpg">
+</head>
+
+<body>
+    <div id="contact" class="big-bg">
+        <!-- ↑このページでしか使わないものはID属性を追加する。 -->
+        <header class="page-header wrapper">
+            <!-- ↑半角スペースを入れて2つCLASSを指定してあげることができる。 -->
+            <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WEBカフェホーム"></a></h1>
+           <!-- ↑ロゴをクリックするとindex.HTMLとタイトル付けたページにリンクするように<a href=""></a>をつけた -->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <h2 class="page-title">Contact</h2>
+            <form action="#">
+            <!-- ↑入力したフォームの内容を送信した情報は「＃」へ送信し、処理される -->
+            <div>
+                <label for="name">お名前</label>
+                <input type="text" id="name" name="your-name">
+            </div>
+            <div>
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="your-email">
+            </div>
+            <div>
+                <label for="message">メッセージ</label>
+                <textarea name="your-message" id="message" ></textarea>
+            </div>
+            <input type="submit" class="button" value="送信">
+            <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdU8t7Kh7oJm0VokzTeCWbCxKRl5t50yegP0mfUfQw0iYG8Xw/viewform?embedded=true" width="640" height="891" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe> -->
+            <!-- ↑googleフォームを利用して実際に作成したフォーム -->
+            </form>
+        </div><!-- /#wrapper -->
+    </div><!--/#contact-->
+
+    <section id="location">
+        <div class="wrapper">
+            <div class="location-info">
+                <!--↓スタイルシートの257行目でsub-titleクラスのボーダーボトムを指定してるため、
+                    H3とPの間にラインが引かれた。
+                また、paddingも指定しているため上以外のpaddingも8pxが指定されている。-->
+                <h3 class="sub-title">カフェ 東駅前店</h3>
+                <p>
+                    住所：東京都〇〇区<br>
+                    〇〇〇〇〇〇〇 000-22-1 <br>
+                    〇〇〇〇 <br>
+                    電話：03-1111-1111 <br>
+                    営業時間：10:00~20:00 <br>
+                    休日：水曜
+                </p>
+                <!--<br>＝インライン要素を改行させたり、<p></P>タグの中で利用して安楽の中の改行として利用する。
+                終了タグはない。-->
+            </div><!--/.location-info-->
+
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1sQHPMKqGnNJn565I2WHOf5Y51VekwReB&ehbc=2E312F" width="640" height="480"></iframe>
+                <!-- ↑教材P.272～275のgoogleマップのカスタマイズをしたマップ-->
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25923.8640346189!2d139.70052953955079!3d35.68973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cec2042e01d%3A0xfc3f5439112d19ec!2z5p2x5Lqs44GK44KC44Gh44KD576O6KGT6aSo!5e0!3m2!1sja!2sjp!4v1652838056680!5m2!1sja!2sjp" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                <!-- ↑googleマップから特定の場所を指定したマップ -->
+            </div><!--/.location-map-->
+        </div><!--/.wrapper-->
+    </section><!--/#location-->
+    <section id="sns">
+        <div class="wrapper">
+            <div id="facebook" class="sns-box">
+                <h3 class="sub-title">Fecebook</h3>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbocjapan&tabs=timeline&width=340&height=315&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+
+            <div id="twitter" class="sns-box">
+                <h3 class="sub-title">Twitter</h3>
+                <a class="twitter-timeline" data-height="315" data-theme="dark" href="https://twitter.com/oO0Eve0Oo?ref_src=twsrc%5Etfw">Tweets by oO0Eve0Oo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+
+            <div id="youtube" class="sns-box">
+                <h3 class="sub-title">YouTube</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/O8IhTEi3U9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div><!--/.wrapper-->
+    </section><!--#sns-->
+    <footer>
+        <div class="wrapper">
+            <p><small>&copy;2019 Manabox</small></p>
+        </div>
+    </footer>
+            <!-- ↑<small></small>＝表示上のスタイルとは関係なく、
+            著作権表示や法的表記のような、注釈を表します。
+            このタグを仕様するとCSS側でフォントサイズを指定することなく文字が小さく表示されます。
+            その他の使用方法は特にないので基本フッダータグ内で使用します。 -->
+            <!-- ↑&copy;＝ブラウザ上で©マークが表示されます -->
+</body>
+</html>
