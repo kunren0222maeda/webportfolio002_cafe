@@ -1,0 +1,584 @@
+@charset "UTF-8";
+/* ↑コードの文字化け防止 */
+html {
+    font-size: 100%;
+}
+/* ↑ユーザーの設定した文字サイズを正しく反映。
+html＝セレクター・｛｝＝必須・font-size＝プロパティ・100％＝プロパティの値 */
+body {
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color:#432;
+}
+/* ↑font-family＝bodyの書体の指定
+line-height＝行の高さ指定
+color＝色の指定(ここでカラーを設定しておけばこのHTML内のBOBYで使用するカラーのデフォルトが＃432になる) */
+a {
+    text-decoration: none;
+}
+/* ↑text-decoration＝ */
+
+img {
+    max-width: 100%;
+}
+/* max-width＝最大値
+↑ブラウザのサイズの100％でimgを表示する
+ここで最大値を設定しておくことで今後作成するすべてのIMGで親要素より大きくならないようにしている */
+
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+/* ↑width＝横幅
+margin-top＝親要素（H1）に対してフチを上（top）を14px空ける */
+.main-nav{
+display: flex;
+font-size: 1.25rem;
+text-transform: uppercase;
+/* text-transform: capitalize; */
+/* text-transform: full-width; */
+/* text-transform: full-size-kana; */
+/*text-transformプロパティ: ;＝ 文字を大文字、小文字を指定している。
+uppercase＝大文字
+lowercase＝小文字
+full-width＝1文字目だけ大文字。（一般的な英語の文法のように）
+full-size-kana＝一般に <ruby> によるフリガナで使用され、
+すべての小文字の仮名文字を同等の大文字の仮名文字に変換することで、
+ルビで使われるフォントの大きさによる読みやすさの問題を解消します。
+ */
+margin: 34px 0px 0px 0px;
+list-style: none;
+}
+
+.main-nav li{
+    margin-left: 36px;
+    /*この表示でも一緒→ margin: 0px 0px 0px 36px; */
+}
+.main-nav a{
+    color: #432;
+}
+.main-nav a:hover{
+    color: #0bd;
+}
+/* ↑ :hover＝指定のセレクターに追加することでカーソルを合わせた時に、
+どのように変更するか指定できる。
+今回の例だと、main-navのクラスの中の属性aで指定したリンクにカーソルを合わせると
+color: #432;からcolor: #0bd;へ色が変わる。
+*/
+
+.page-header{
+    display: flex;
+justify-content: space-between;
+}
+/* ↑h1とnavタグの2つに対してFLEXのspace-betweenという並びを指定している */
+
+.wrapper{
+    max-width: 1100px;
+    /* 画像の一番大きい横幅 */
+    margin: 0 auto;
+    /* margin: 上下 左右 */
+    padding: 0 4%;
+    /* ↑padding:上下 左右 */
+}
+
+/* HOME------------------------------------- */
+
+.home-content{
+    text-align: center;
+    margin-top: 10%;
+}
+.home-content p{
+    font-size: 1.125rem;
+    margin: 10px 0px 42px;
+    /* (上10px 左右0 下42px) */
+}
+/* .home-contentと.home-content pの違い
+→home-contentの中にあるp（要素の中にある要素）を指定する時には
+タグやクラス（要素）を半角スペースで区切る。
+複数のタグやクラス（要素）を同時に選択する場合は.を使って区切る。 */
+
+/* 見出し */
+.page-title{
+    font-size: 5rem;
+    font-family: 'Philosopher',serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    /* font-weight=フォントの太さ (あるいは重み) を指定 */
+}
+
+/*ボタン*/
+.button{
+    font-size: 1.375rem;
+    background: #0bd;
+    color: #fff;
+    border-radius: 5px;
+    /* ↑ 要素の境界の外側の角を丸めます。
+    1つの半径を設定すると円の角になり、
+    2つの半径を設定すると楕円の角になる。*/
+    padding: 18px 32px;
+
+}
+.button:hover{
+    background: #0090aa;
+}
+/* 大きな背景画像 */
+.big-bg{
+    background-size: cover;
+    /*contain＝画像を切り取ったり縦横の比率を変えることなく、WEDのウインドウ内で表示する
+    同じ宣言内にbackground-repeat: no-repeat;を追加しない限り、画像がタイル状に配置される。
+    cover＝画像をコンテナーいっぱいにできるだけ大きく拡大縮小し、必要に応じて画像を引き伸ばします。画像の比率が要素と異なる場合は、
+    何もない空間が残らないように、上下または左右が切り取られます。
+    auto＝背景画像の本来の比率が維持されるように、対応する方向に拡大縮小します。*/
+    background-position: center top;
+}
+#home{
+    background-image: url(images/main-bg.jpg);
+    min-height: 100vh;
+    /*min＝最小値の指定。ここでは高さは100vh以下にならないように指定している*/
+
+    /* background-color: green; */
+    /* ↑画像の裏のバックグラウンドに#0bd色を設定 */
+
+    /* background-blend-mode: hard-light; */
+    /*hard-light＝背景に強烈なスポットライトを当てた状況。
+    上の色が暗い色であれば multiply 、
+    明るい色であれば screen の結果が最終的な色*/
+
+    /* background-image: linear-gradient(#c9ffbf,#ffafbd); */
+
+    /* background-image: url(images/main-bg.jpg),linear-gradient(#c9ffbf,#ffafbd);
+    background-blend-mode:luminosity; */
+    /*↑luminosity＝最終的な色は上の色の明度を持ちますが、色相および 彩度は下の色の値を使用します。
+    この混合モードは color と同じですが、レイヤーが入れ替わっています。*/
+}
+#home .page-title{
+    text-transform: none;
+}
+/*IDで指定したHOMEの中の.page-titleのクラスに対して追加したプロパティtext-transform: uppercase;が
+ここでnoneのIDを追加しているので無効になってる。
+text-transforプロパティとは、テキストを大文字統一で表示するか、小文字統一で表示するか、
+NONEは何も変更しない意味の値。*/
+
+/* NEWS------------------------------------- */
+
+#news{
+    background-image: url(images/news-bg.jpg);
+    height: 270px;
+    /* ↑height: 270px;＝＃NEWSの高さ */
+    margin-bottom: 40px;
+    /* ↑margin-bottom: 40px; ＝ID＝”NEWS”で囲んだ範囲の下にカラムを追加すると、
+    NEWSとカラムの間に40PX余白が生まれる*/
+}
+#news .page-title{
+    text-align: center;
+}
+/*#news .page-title（＃__(半角スペース).__）
+↑ID＝”NEWS”の中にあるCCLASS＝”page-title” を指定している*/
+
+/* 記事部分 */
+article{
+    width: 60%;
+    /* order: 2; */
+}
+/* サイドバー */
+aside{
+    width: 22%;
+    /* order: 3; */
+}
+/*新メニュー登場*/
+/* .ad{
+    order: 1;
+} */
+/*div class="news-contentsに対してFLEXを指定しているので後から3カラム目を追加してもFLEXが適用される。
+<article>、<aside>、<div class="ad">がFLEXによって横並びになるよう指定されてる。
+ order: ;とはFLEXを指定しているタグに対してのみ使用可能。*/
+.news-contents{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.post-info{
+    position: relative;
+    padding-top: 4PX;
+    margin-bottom: 40px;
+}
+/* ↑ブラウザ上を基準にして
+relative＝親要素を基準にして移動すること。
+今回で言うと<article>の要素を親として他のテキスト等を
+無視して指定した高さや幅を表示する宣言。
+absolute＝ブラウザ上に対して他のテキスト等を無視して
+絶対値で指定した高さや幅を表示する宣言。 */
+.post-title{
+    font-family: "Yu Mincho","YuMincho",serif;
+    font-size: 2rem;
+    font-weight: normal;
+    /* font-weight: ＝フォントの太さ。今回はnormalの太さを指示している; */
+}
+.post-title,.post-cat{
+    margin-left: 120px;
+    /* ↑クラスpost-dateを position: absoluteで
+    絶対値で位置を指定したのでそこにかぶらないように指定している */
+}
+.post-date{
+    color: #fff;
+    padding-top: 10px;
+    /* ↑テキストの3/30 2019の文字色とフチからの位置を指定している */
+    background: #0bd;
+    border-radius: 50%;
+    /* ↑post-dateのbackgroundの角を丸く表示するよう指定している。 */
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute;
+    /* ↑position: absolute;だと<article>内でテキストを無視して位置を指定しているだけ。 */
+    top: 0px;
+    /* ↑いったんposition: absolute;を使って絶対値で場所を指定し、
+    さらに親要素（<article>）内での表示位置のTOPを0pxに指定してる。 */
+}
+.post-date span{
+    font-size: 1rem;
+    border-top: 1px rgba(255,255,255, .5) solid;
+    /* ↑2019の上に線を引いてる */
+    padding-top: 6px;
+    display: block;
+    /* ↑display: block;＝<span>はインライン要素のため、
+    ブロック要素として使えるように仕様を変える指示。
+    ブロック要素を1行（1列）にしたいときは
+    display: inline;を使用する（H1～H6タグには使用不可） */
+    width: 60%;
+    margin: 0 auto;
+}
+article img{
+    margin-bottom: 20px;
+}
+article p{
+    margin-bottom: 1rem;
+    /* ↑<p>の記事の間。下部に余白を入れる指示。 */
+}
+.sub-title{
+    font-size: 1.375rem;
+    padding: 0px 8px 8px;
+    font-weight: normal;
+    border-bottom: 2px #0bd solid;
+    /* ↑   solid＝線の種類 */
+}
+.sub-menu{
+    margin-bottom: 60px;
+    list-style-type: none;
+    /* (リストのスタイルを数字や英数字ではなく、デフォルトの・のリストで表示) */
+}
+.sub-menu li{
+    border-bottom: 1px #ddd solid;
+}
+.sub-menu a{
+    color: #432;
+    padding: 10PX;
+    display: block;
+    /* ↑今回sub-menuのグループ内のaをdisplay: block;を付けてブロック化することで
+    いちいち文字にマウスカーソルを合わせなくてもaのバックグラウンドにカーソルが届いた時点で
+    a:hoverのアクションが適応されるようになる。
+    あくまでユーザーの使いやすさを目的をした宣言 */
+}
+.sub-menu a:hover{
+    color: #0bd;
+    /* a: ＝疑似要素
+指定したタグに対して何か動作を行ったときにアクションが起きるように指示する。
+（HOVER＝カーソルを合わせたとき） */
+}
+aside p{
+    padding: 12PX 10px;
+    /* (上下12PX 左右10PXの意味) */
+}
+/* MENU-------------------------------------*/
+#menu{
+    background-image: url(images/menu-bg.jpg);
+    min-height: 100vh;
+    /*↑背景画像の最小値を100vhに指定する*/
+}
+.menu-content{
+    max-width: 560px;
+    /*今表示しているブラウザのサイズ関係なく560PXよりテキストの表示幅が変わらないように指定している。*/
+    margin-top: 10%;
+}
+.menu-content .page-title{
+    text-align: center;
+    /*↑中央揃えでテキスト（大文字の「MENU」）を表示*/
+}
+.menu-content p{
+    font-size: 1.125rem;
+    margin: 10px 0px 0px;
+    /*↑margin: 上 左右 下;*/
+}
+.grid{
+    display: grid;
+    gap: 26px;
+    /* ↑gap＝画像同士の余白を26PX空ける */
+    /* grid-template-columns: repeat(3, minmax(240px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /*↑画像同士を1fr空けて横に3つ並べる。1fr 1fr 1frとrepeat(3, 1fr)は同じ意味
+    さらにminmax()を付け加えると、ブラウザサイズがどんなに小さくなっても
+    画像は240px以下にならない。*/
+    /* ↑fr＝親要素のサイズが変わっても画像が切れないようにいい感じで1：1：1の割合で等分して
+    親要素の中で表示してくれる単位。
+    ※gridの宣言内でしか使わない。 */
+    /* auto-fitとは＝画像サイズに合わせて横に並べる画像の数を自動的に変えてくれる。
+    例）大きいブラウザ→3列。小さいブラウザ→2列 */
+    /* なぜ３つまでしか横に並ばないのか。
+    →.wrapperで横の最大値を1100ｐｘと指定したので、
+    画面が1100ｐｘ以上になった場合は1100ｐｘの表示と変わらなくなる。 */
+        max-width: 1100px;
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+.big-box{
+    grid-column: 1/3;
+    /*横幅を1から3の位置＝始まりのライン/終わりのラインに表示させる。
+    同じ要素内に別の画像があったとしても、要素の左上からラインを数えて表示させる。*/
+    grid-row: 1/3;
+    /*grid-columnと同様。ROWの場合は高さ。*/
+}
+.big-box img{
+    height: 94%;
+    width: 100%;
+    object-fit: cover;
+    /*上記の記述でheightとwidthを使い画像サイズを変更したため、このままでは画像の比率が変わってしまっている。
+    object-fit: cover;を追加することで自動的に画像をサイズに合わせてトリミングしてくれる。*/
+}
+.big-box2{
+    grid-column: 1/3;
+    /*横幅を1から3の位置＝始まりのライン/終わりのラインに表示させる。
+    同じ要素内に別の画像があったとしても、要素の左上からラインを数えて表示させる。*/
+    grid-row: 3/5;
+    /*grid-columnと同様。ROWの場合は高さ。*/
+}
+.big-box2 img{
+    height: 94%;
+    width: 100%;
+    object-fit: cover;
+}
+/* FOOTER------------------------------------- */
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0PX;
+}
+footer p{
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+/* CONTACT------------------------------------- */
+
+#contact{
+    background-image: url(images/contact-bg.jpg);
+    min-height: 100vh;
+}
+
+/*フォーム*/
+form div{
+    margin-bottom: 14px;
+}
+/* ↑フォームの中のタグDIVの下部を全て14PX空ける */
+label{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+/* ここにdisplay: block;を入れることで「お名前」や「メッセージ」がブロック化されて改行が入る。
+さらにテキストをクリックしても入力を開始できるようになる。 */
+
+/* ↓inputタグに関しては、属性を指定できる。
+その際の記述は「input[type="***"]」 */
+input[type="text"],
+input[type="email"],
+textarea{
+    background: rgba(255, 255, 255,.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    /* ↑ボタン等で使用する。要素の角を丸くしてあげる。数字が大きければ大きいほど丸に近づく */
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+    max-width: 240px;
+}
+/* レスポンシブ対応等させる際に親要素より大きく表示されないようにwidth: 100%;を設定しておく。
+ ＰＣブラウザで表示する際はmax-widthを設定しておくことでそれ以上大きく表示されなくなる*/
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"]{
+    border: none;
+    /* 送信ボタンを線で囲む設定を無しにしてる。 */
+    cursor: pointer;
+    /* ↑cursor＝マウスカーソルを合わせた際にカーソルの種類が変わる。
+    この場合カーソルを合わせると一指し指を立てた手に変わる。 */
+    line-height: 1;
+    /*送信ボタンをテキストから上下左右*/
+}
+
+/*店舗情報とgoogle地図*/
+#location{
+    padding: 4% 0%;
+}
+#location .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.location-info{
+    width: 22%;
+}
+.location-info p{
+    padding: 12px 10px;
+}
+.location-map{
+    width: 74%;
+}
+/*iframe(google地図のタグ。サイトからコピペした箇所)*/
+iframe{
+    width: 100%;
+}
+/*↑800×400のフレームサイズでgoogle地図のリンクをコピーしたため、
+<iframe>タグの要素のサイズよりマップが大きく表示されてしまっている。
+そのためwidth(横幅)を100％にしてあげることで要素の中に地図の表示が収まるように設定した。
+この設定をしておけばたとえ地図のサイズが違うサイズでも要素内におさまるように表示してくれる。*/
+
+/*SNS*/
+#sns{
+    background: #faf7f0;
+    padding: 4% 0%;
+}
+#sns .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+#sns .sub-title{
+    margin-bottom: 30px;
+}
+/*↑サブタイトルにクラス分けした要素のラインの外＝marginのさらに下ライン＝bottomに30PXの余白を指定した。
+ブラウザ上ではFecebookとFacebookプラグインの間のラインの下側に余白が生まれている。
+(Twitter、YouTubeも同様)*/
+.sns-box{
+    width: 30%;
+}
+/*↑wrapperのマックスサイズ1100PXの中で30％の横幅で表示するよう指示出ししている。*/
+
+/* #twitter{
+    order: 1;
+}
+#facebook{
+    order: 3;
+}
+#youtube{
+    order: 2;
+} */
+/*↑FLEXを指定「している要素に対してorderプロパティを使える。
+使うと順番を入れ替えることができる。*/
+
+/*↓@media (max-width:600px)で一つのセレクターとして覚えてＯＫ。
+意味は600PX以下になったら宣言内の設定を適用させる。
+※必ずスタイルシートの一番下に記載すること！！*/
+
+/*モバイル版-----------------------------------------------*/
+@media (max-width:600px){
+    .page-title{
+        font-size: 2.5rem;
+    }
+    /*----HEADER----*/
+    .main-nav{
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .main-nav li{
+        margin: 0px 20px;
+    }
+    /*-----HOME-----*/
+    .home-content{
+        margin-top: 20%;
+    }
+    .page-header{
+        flex-direction: column;
+        align-items: center;
+    }
+    /*----NEWS---- */
+    .news-contents{
+        flex-direction: column;
+    }
+    article,aside{
+        width: 100%;
+    }
+    #news .page-title{
+        margin-top: 30px;
+    }
+    aside{
+        margin-top: 60px;
+    }
+    .post-info{
+        margin-bottom: 30px;
+    }
+    .post-date{
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+    .post-date span{
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+    .post-title{
+        font-size: 1.375rem;
+    }
+    .post-cat{
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+    .post-title,.post-cat{
+        margin-left: 80px;
+    }
+    /*MENUページ*/
+    .menu-content{
+        margin-top: 20%;
+    }
+    .big-box{
+        grid-column: auto;
+        grid-row: auto;
+        /* 600px以下の表示になったらgrid-columnとrid-rowの
+        サイズの表示設定を外す指示を出している。 */
+    }
+    .big-box img{
+        height: auto;
+    }
+    /*CONTACT*/
+    #contact .page-title{
+        margin-top: 40px;
+    }
+
+    /*フォーム*/
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        max-width: 100%;
+    }
+    /*店舗情報とgoogle地図*/
+    #location .wrapper,#sns .wrapper{
+        flex-direction: column;
+    }
+    /*↑レスポンシブ対応させた際に縦並びに変わるように
+    ブラウザ上の住所とマップとFacebookとTwitterとYouTubeを
+    FLEXでcolumn＝要素を上から下に表示するように指示している*/
+    .location-info,.location-map,.sns-box{
+        width: 100%;
+    }
+    /*↑画面が600PXを切ったら要素がブラウザのサイズの100％表示になるように指定。
+    paddingはそのまま有効になるので画面キチキチ表示にはならない。*/
+    .sns-box{
+        margin-bottom: 30px;
+    }
+    /*↑レスポンシブ対応させて縦並びになったとしても
+    要素同士の下部に30PXの余白が生まれるように指定している。*/
+}
