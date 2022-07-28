@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- DOCTYPE=ドックタイプ -->
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <!-- charset=キャーセット -->
+    <title>WCB CAFE</title>
+       <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
+    <!-- meta name="description"は1つのタグとして覚える。 -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- ↑自身で作成するスタイルシートの<link rel="stylesheet" href="">の上にリセットCSSのリンクを記載する -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- ↑WEB上のタブにあるアイコン＝ファビコン
+    追加方法はlink rel="icon"を1つのタグとし、
+    type="image/png"でどこのフォルダに入ってる何形式のファイルか指定し、
+    href="images/favicon.png"で実際のファイル名を指定。
+    ※必ずHTMLの<head></head>の要素の中に追加すること！ -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+    <div id="home" class="big-bg">
+        <header class="page-header wrapper">
+            <!-- ↑半角スペースを入れて2つCLASSを指定してあげることができる。 -->
+            <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WEBカフェホーム"></a></h1>
+           <!-- ↑ロゴをクリックするとindex.HTMLとタイトル付けたページにリンクするように<a href=""></a>をつけた -->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="home-content wrapper">
+            <h2 class="page-title">We'll Make Your Day</h2>
+            <p>おしゃれなカフェで癒されてみませんか？無添加の食材で体の中からリフレッシュ。</p>
+            <a class="button" href="menu.html">メニューを見る</a>
+            <a class="button" href="news.html">NWESを見る</a>
+        </div><!--/.home-ontent-->
+    </div><!--/#home-->
+
+</body>
+</html>
