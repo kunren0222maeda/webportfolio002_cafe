@@ -1,0 +1,100 @@
+<!-- ↓同じレイアウトを別ページでも使用する場合は前回作成したindex.HTMLをコピーして不要な
+箇所を削除した法がミスが少ない。
+今回は<head>内はタブのタイトルのみ変更していて、ファビコンやスタイルシートはは同じものを読み込んでいる。
+    <body>内はロゴとNAVを同じ仕様にしている。 -->
+
+<!DOCTYPE html>
+<!-- DOCTYPE=ドックタイプ -->
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <!-- charset=キャーセット -->
+    <title>WCB CAFE -MENU</title>
+    <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
+    <!-- meta name="description"は1つのタグとして覚える。 -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- ↑自身で作成するスタイルシートの<link rel="stylesheet" href="">の上にリセットCSSのリンクを記載する -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- ↑WEB上のタブにあるアイコン＝ファビコン
+    追加方法はlink rel="icon"を1つのタグとし、
+    type="image/png"でどこのフォルダに入ってる何形式のファイルか指定し、
+    href="images/favicon.png"で実際のファイル名を指定。
+    ※必ずHTMLの<head></head>の要素の中に追加すること！ -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- ↑レスポンシブ対応させる際にこのままコピペで使う -->
+</head>
+
+<body>
+    <div id="menu" class="big-bg">
+        <!-- ↑このページでしか使わないものはID属性を追加する。 -->
+        <header class="page-header wrapper">
+            <!-- ↑半角スペースを入れて2つCLASSを指定してあげることができる。 -->
+            <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WEBカフェホーム"></a></h1>
+           <!-- ↑ロゴをクリックするとindex.HTMLとタイトル付けたページにリンクするように<a href=""></a>をつけた -->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="menu-content wrapper">
+            <h2 class="page-title">Menu</h2>
+            <p>体に優しい自然食を提供する、WCB CAFE。無添加の食材を利用したメニューが特徴です。
+                おいしいブレンドコーヒーとヘルシーなオーガニックフードで体の内側から癒されてください。
+            </p>
+        </div>
+    </div><!--/#MENU-->
+    <div class="wrapper grid">
+        <div class="item big-box">
+            <img src="images/menu1.jpg" alt="ブレンド珈琲">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu2.jpg" alt="カフェラテ">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu3.jpg" alt="デザート1">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu4.jpg" alt="スープ">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu5.jpg" alt="サラダ">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu6.jpg" alt="パスタ">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu7.jpg" alt="アヒージョ">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item">
+            <img src="images/menu8.jpg" alt="オレンジタルト">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+        <div class="item big-box2">
+            <img src="images/menu9.jpg" alt="チーズケーキ">
+            <p>写真キャプション/写真キャプション</p>
+        </div>
+    </div><!-- /.wrapper .grid -->
+    <footer>
+        <div class="wrapper">
+            <p><small>&copy;2019 Manabox</small></p>
+        </div>
+    </footer>
+            <!-- ↑<small></small>＝表示上のスタイルとは関係なく、
+            著作権表示や法的表記のような、注釈を表します。
+            このタグを仕様するとCSS側でフォントサイズを指定することなく文字が小さく表示されます。
+            その他の使用方法は特にないので基本フッダータグ内で使用します。 -->
+            <!-- ↑&copy;＝ブラウザ上で©マークが表示されます -->
+</body>
+</html>
